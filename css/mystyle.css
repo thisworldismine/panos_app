@@ -1,0 +1,118 @@
+body {
+    height: 100%;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.menu-holder {
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    background-color: #d1d1d1;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.header1 {
+    padding-top: 0;
+    margin-top: 5px;
+}
+
+.header, .header1 {
+    font-weight: bold;
+}
+
+.menu-block {
+    border: 1px solid #f6f6f6;
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    padding: 0;
+}
+
+.menu-block-content {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+    padding-left: 50px;
+    background-color: #d6d6d6;
+}
+
+a.menu-block-content {
+    color: #000000;
+}
+
+ul.main-menu {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.item-block {
+    border: 1px solid #f6f6f6;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 20px;
+}
+
+.qty-block {
+    height: 50px;
+    background-color: #d7d7d7;
+    color: #f6f6f6;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.content-section {
+    border: 1px solid #f6f6f6;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.content-item-section {
+    padding-left: 0px;
+}
+
+a.col-md-12:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.items-listing {
+    padding-top: 10px;
+}
+
+.total-price {
+    font-size: 15px;
+}
+
+.total-price-value {
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.items-list {
+    list-style-type: none;
+}
+
+.active {
+    border-left: 10px solid #000000;
+}

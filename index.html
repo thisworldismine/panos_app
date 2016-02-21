@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="restoApp">
+<head>
+    <title>Panos Order Management System</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/controllers/app.js"></script>
+    <script type="text/javascript" src="js/controllers/category.js"></script>
+    <script type="text/javascript" src="js/controllers/itemController.js"></script>
+</head>
+<body>
+    <div ng-controller="appController" class="container">
+        <div class="col-md-2 menu-holder">
+            <h4 class="header">Menu</h4>
+            <ul class="main-menu">
+                <li class="menu-block col-md-12" ng-repeat="item in menus_items|orderBy:'name'">
+                    <a ng-class="menuActive" class="menu-block-content col-md-12" ng-click="setCategory($index)">{{item.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6 content-section" ng-controller="itemController">
+            <div class="col-md-2 no-padding" ng-show="currentCategory">
+                <h4 class="text-center header1">Qty</h4>
+                <ul class="main-menu">
+                    <li class="col-md-12" ng-repeat="num in quantity">
+                        <a ng-click="setQuantity($index)" class="qty-block col-md-12">{{num}}</a>
+                    </li>
+                    <li class="col-md-12">
+                        <a class="qty-block col-md-12">...</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-10 content-item-section" ng-show="currentCategory">
+                <h4 class="header1">List of Items</h4>
+                <ul class="no-padding items-list">
+                    <li ng-repeat="item in currentItems">
+                        <a ng-click="setItemsList($index)" ng-model="item_name" class="item-block col-md-4">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4 items-listing" ng-controller="itemController">
+            <div class="total-price">
+                <label>Total Price: Rs.</label>
+                <span class="total-price-value">{{data.total}}</span>
+            </div>
+            <div class="table">
+                <table class="table">
+                    <tbody>
+                        <tr ng-repeat="selected in currentItemsList">
+                            <td>{{selected.name}}&nbsp;</td>
+                            <td>{{selected.unitPrice}} * {{selected.quantity}} = {{selected.unitPrice*selected.quantity | number:2}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
